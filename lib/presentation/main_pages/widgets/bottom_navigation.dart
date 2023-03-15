@@ -30,7 +30,7 @@ class BottomNavWidget extends StatelessWidget {
                     icon: Icon(Icons.search), label: 'Search'),
                 BottomNavigationBarItem(
                     icon: Icon(Icons.arrow_circle_down_outlined),
-                    label: 'Downloads')
+                    label: 'Download')
               ]);
         });
   }

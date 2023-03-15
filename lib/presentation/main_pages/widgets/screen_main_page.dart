@@ -11,11 +11,11 @@ class ScreenMainPage extends StatelessWidget {
   // ignore: prefer_const_constructors_in_immutables
   ScreenMainPage({super.key});
 
-  final pages =const [
-    ScreenHome(),
-    NewAndHotScreen(),
-    FastLaugScreen(),
-    SearchScreen(),
+  final pages = [
+   const ScreenHome(),
+   const NewAndHotScreen(),
+   const FastLaugScreen(),
+   const SearchScreen(),
     DownloadScreen()
   ];
 
