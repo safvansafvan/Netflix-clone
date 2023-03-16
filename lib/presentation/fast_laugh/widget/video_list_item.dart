@@ -66,5 +66,5 @@ class VideoActionWidget extends StatelessWidget {
         children: [Icon(icons,color: cwhite,), Text(title,style:const TextStyle(fontSize: 16,color: cwhite),)],
       ),
     );
-  }
+  } 
 }
