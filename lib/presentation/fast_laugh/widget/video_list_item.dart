@@ -19,20 +19,22 @@ class VideoListItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 CircleAvatar(
-                    radius: 25,
-                    backgroundColor: Colors.black.withOpacity(0.4),
-                    child: IconButton(
-                    
-                        onPressed: () {}, icon: const Icon(Icons.volume_mute))),
+                  radius: 25,
+                  backgroundColor: Colors.black.withOpacity(0.4),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.volume_mute),
+                  ),
+                ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children:const [
-
-                     Padding(
-                      padding: EdgeInsets.symmetric( vertical: 8.0),
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.0),
                       child: CircleAvatar(
                         radius: 25,
-                        backgroundImage: NetworkImage("https://www.themoviedb.org/t/p/w250_and_h141_face/nVRyd8hlg0ZLxBn9RaI7mUMQLnz.jpg"),
+                        backgroundImage: NetworkImage(
+                            "https://www.themoviedb.org/t/p/w250_and_h141_face/nVRyd8hlg0ZLxBn9RaI7mUMQLnz.jpg"),
                       ),
                     ),
                     VideoActionWidget(
@@ -61,10 +63,19 @@ class VideoActionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 8),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       child: Column(
-        children: [Icon(icons,color: cwhite,), Text(title,style:const TextStyle(fontSize: 16,color: cwhite),)],
+        children: [
+          Icon(
+            icons,
+            color: cwhite,
+          ),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 16, color: cwhite),
+          )
+        ],
       ),
     );
-  } 
+  }
 }

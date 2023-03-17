@@ -3,22 +3,24 @@ import 'package:netflix_npp/core/colors/colors.dart';
 
 class CoustumButtonWidget extends StatelessWidget {
   const CoustumButtonWidget({
-    super.key, required this.icon, required this.title,
+    super.key, required this.icon, required this.title,  this.iconssize=30,  this.textsize=18,
   });
   final IconData icon;
   final String title;
+  final double iconssize;
+  final double textsize;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
          Icon(
          icon,
-          size: 22,
+          size:iconssize,
           color: cwhite,
         ),
          Text(
           title,
-          style:const TextStyle(fontSize: 17, color: cwhite),
+          style: TextStyle(fontSize:textsize, color: cwhite),
         ),
       ],
     );

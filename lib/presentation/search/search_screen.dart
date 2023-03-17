@@ -31,7 +31,7 @@ class SearchScreen extends StatelessWidget {
             cHeight,
           
             // Expanded(child: SearchIdlewidget()),
-             Expanded(child: SearchResultWidget())
+           const  Expanded(child: SearchResultWidget())
           ],
         ),
       ),
