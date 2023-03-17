@@ -13,7 +13,7 @@ class AppBarWidget extends StatelessWidget {
     return Row(
       children: [
         cWidth,
-        Text(title,style: TextStyle(fontSize: 25 ,fontWeight:FontWeight.bold ),),
+        Text(title,style:const TextStyle(fontSize: 25 ,fontWeight:FontWeight.bold ),),
        const Spacer(),
         IconButton(onPressed: (){}, icon:const Icon(Icons.cast,color: Colors.white,size: 30,)),
         Container(
