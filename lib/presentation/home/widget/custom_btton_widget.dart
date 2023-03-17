@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_npp/core/colors/colors.dart';
 
-class CoustumButtonWidget extends StatelessWidget {
-  const CoustumButtonWidget({
+class CustomButtonWidget extends StatelessWidget {
+  const CustomButtonWidget({
     super.key, required this.icon, required this.title,  this.iconssize=30,  this.textsize=18,
   });
   final IconData icon;

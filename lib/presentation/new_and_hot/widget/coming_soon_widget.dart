@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_npp/core/contants.dart';
 import 'package:netflix_npp/presentation/home/widget/custom_btton_widget.dart';
+import 'package:netflix_npp/presentation/widgets/video_widget.dart';
 
 class ComingSoonWidget extends StatelessWidget{
   const ComingSoonWidget({
@@ -42,39 +43,7 @@ class ComingSoonWidget extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Stack(
-                children: [
-                  Container(
-                    height: 200,
-                    width: double.infinity,
-                    decoration:  BoxDecoration(
-                      image:const DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(
-                          'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/mqsPyyeDCBAghXyjbw4TfEYwljw.jpg',
-                        
-                        ),
-                        
-                      ),
-                      borderRadius: radius10
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 10,
-                    right: 10,
-                    child: CircleAvatar(
-                      radius: 20,
-                      backgroundColor: Colors.black.withOpacity(0.4),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.volume_mute,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            const  VideoWidget(),
               cHeight20,
               Row(
                 children: [
@@ -84,14 +53,14 @@ class ComingSoonWidget extends StatelessWidget{
                           fontWeight: FontWeight.bold,
                           fontFamily: GoogleFonts.bebasNeue().fontFamily)),
                   const Spacer(),
-                  const CoustumButtonWidget(
+                  const CustomButtonWidget(
                     icon: Icons.notifications_outlined,
                     title: 'RemindMe',
                     iconssize: 17,
                     textsize: 13,
                   ),
                   cWidth,
-                  const CoustumButtonWidget(
+                  const CustomButtonWidget(
                     icon: Icons.info_outline,
                     title: 'Info',
                     iconssize: 17,
