@@ -8,6 +8,7 @@ const cHeight20=SizedBox(height: 20,);
 //borderradius
 
 final BorderRadius radius10=BorderRadius.circular(10);
+final BorderRadius radius30=BorderRadius.circular(30);
 
 // images
   const cMainimage="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/pmAv14TPE2vKMIRrVeCd1Ll7K94.jpg";

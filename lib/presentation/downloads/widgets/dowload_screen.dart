@@ -11,21 +11,24 @@ class DownloadScreen extends StatelessWidget {
   final _widgetList = [
     const Smartdownloads(),
     Sectiontwo(),
-   const Sectionthree(),
+    const Sectionthree(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const PreferredSize(
-            preferredSize: Size.fromHeight(50),
-            child: AppBarWidget(
-              title: 'Downloads',
-            )),
-        body: ListView.separated(
-          padding:const EdgeInsets.all(10),
-            itemBuilder: (ctx, index) =>_widgetList[index] ,
-            separatorBuilder: (ctx, index) =>const SizedBox(height:25 ,),
-            itemCount:_widgetList.length ));
+      appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(50),
+          child: AppBarWidget(
+            title: 'Downloads',
+          )),
+      body: ListView.separated(
+          padding: const EdgeInsets.all(10),
+          itemBuilder: (ctx, index) => _widgetList[index],
+          separatorBuilder: (ctx, index) => const SizedBox(
+                height: 25,
+              ),
+          itemCount: _widgetList.length),
+    );
   }
 }
 
@@ -68,17 +71,17 @@ class Sectiontwo extends StatelessWidget {
                   imagelist: imagelist[0],
                   angle: 12,
                   size: Size(size.width * 0.35, size.width * 0.55),
-                  margin:const EdgeInsets.only(left: 100,top: 15)),
+                  margin: const EdgeInsets.only(left: 100, top: 15)),
               Downloadimagewidget(
                   imagelist: imagelist[1],
                   angle: -12,
                   size: Size(size.width * 0.35, size.width * 0.55),
-                  margin:const EdgeInsets.only(right: 100,top: 15 )),
+                  margin: const EdgeInsets.only(right: 100, top: 15)),
               Downloadimagewidget(
                   size: Size(size.width * 0.45, size.width * 0.62),
                   radius: 10,
                   imagelist: imagelist[2],
-                  margin:const EdgeInsets.only(bottom: 10,top: 20))
+                  margin: const EdgeInsets.only(bottom: 10, top: 20))
             ],
           ),
         ),
@@ -101,7 +104,7 @@ class Sectionthree extends StatelessWidget {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
             onPressed: () {},
-            child:const Padding(
+            child: const Padding(
               padding: EdgeInsets.symmetric(vertical: 10),
               child: Text(
                 'Set up',
@@ -116,7 +119,7 @@ class Sectionthree extends StatelessWidget {
           color: cbuttoncolorwhite,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
           onPressed: () {},
-          child:const Padding(
+          child: const Padding(
             padding: EdgeInsets.symmetric(vertical: 10),
             child: Text(
               'See what you can download',
@@ -156,7 +159,7 @@ class Smartdownloads extends StatelessWidget {
 }
 
 class Downloadimagewidget extends StatelessWidget {
- const Downloadimagewidget(
+  const Downloadimagewidget(
       {Key? key,
       required this.imagelist,
       this.angle = 0,
