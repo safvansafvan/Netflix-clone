@@ -13,3 +13,6 @@ final BorderRadius radius30=BorderRadius.circular(30);
   const cMainimage="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/pmAv14TPE2vKMIRrVeCd1Ll7K94.jpg";
 
   TextStyle hometitletext=const TextStyle(fontSize: 16,fontWeight: FontWeight.bold);
+
+
+const imageappentUrl="https://image.tmdb.org/t/p/w500/";
