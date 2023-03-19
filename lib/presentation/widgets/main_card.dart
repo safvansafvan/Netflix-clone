@@ -7,11 +7,10 @@ class MainCard extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Container(
-        
         width: 150,
         height: 250,
         decoration: BoxDecoration(

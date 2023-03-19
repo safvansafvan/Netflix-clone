@@ -20,8 +20,11 @@ class NumberTileCard extends StatelessWidget {
           maxHeight: 200,
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children:
-                List.generate(20, (index) =>  NumberCard(index: index,)),
+            children: List.generate(
+                20,
+                (index) => NumberCard(
+                      index: index,
+                    )),
           ),
         )
       ],

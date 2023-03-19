@@ -9,22 +9,23 @@ class SearchResultWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SearchTitleText(title: 'Movie & Tv '),
         cHeight,
-        Expanded(child: GridView.count(
-          shrinkWrap: true,
-          crossAxisCount: 3,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
-          childAspectRatio: 1/1.4,
-          children: List.generate(21, (index) =>const ManiCard())
-          ))
+        Expanded(
+            child: GridView.count(
+                shrinkWrap: true,
+                crossAxisCount: 3,
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8,
+                childAspectRatio: 1 / 1.4,
+                children: List.generate(21, (index) => const ManiCard())))
       ],
     );
   }
 }
+
 class ManiCard extends StatelessWidget {
   const ManiCard({super.key});
 
@@ -32,11 +33,9 @@ class ManiCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        image:const DecorationImage(
-          fit: BoxFit.cover,
-          image: NetworkImage(imageurl)),
-          borderRadius: BorderRadius.circular(8)
-      ),
+          image:  DecorationImage(
+              fit: BoxFit.cover, image: NetworkImage(imageurl)),
+          borderRadius: BorderRadius.circular(8)),
     );
   }
 }

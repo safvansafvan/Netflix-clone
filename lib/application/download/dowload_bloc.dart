@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:netflix_npp/domain/download/core/failures/main_failure.dart';
-import 'package:netflix_npp/domain/i_download_repo.dart';
+import 'package:netflix_npp/domain/download/i_download_repo.dart';
 
 import '../../domain/download/models/downloads.dart';
 
@@ -13,7 +13,6 @@ part 'dowload_bloc.freezed.dart';
 
 @injectable
 class DownloadsBloc extends Bloc<DownloadsEvent, DownloadState> {
-
   final IDownloadRepo _downloadRepo;
 
   DownloadsBloc(this._downloadRepo) : super(DownloadState.inital()) {
@@ -32,9 +31,10 @@ class DownloadsBloc extends Bloc<DownloadsEvent, DownloadState> {
             (failure) => state.copyWith(
                 isLoading: false,
                 downloadsFailuresOrSuccessOption: some(left(failure))),
-            (success) => state.copyWith(isLoading: false,
-            downloads: success,
-            downloadsFailuresOrSuccessOption: some(right(success))),
+            (success) => state.copyWith(
+                isLoading: false,
+                downloads: success,
+                downloadsFailuresOrSuccessOption: some(right(success))),
           ),
         );
       },

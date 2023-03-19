@@ -39,8 +39,8 @@ class NumberCard extends StatelessWidget {
             strokeColor: cwhite,
             child: Text(
               '${index + 1}',
-              style:  TextStyle(
-                color: Colors.black,
+              style: TextStyle(
+                  color: Colors.black,
                   fontSize: 100,
                   fontFamily: GoogleFonts.roboto().fontFamily,
                   fontWeight: FontWeight.bold,

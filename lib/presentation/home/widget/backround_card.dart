@@ -13,7 +13,7 @@ class BackgroundCardwidget extends StatelessWidget {
         Container(
           height: 600,
           width: double.infinity,
-          decoration:const BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               fit: BoxFit.cover,
               image: NetworkImage(cMainimage),

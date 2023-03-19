@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:netflix_npp/core/contants.dart';
 import 'package:netflix_npp/presentation/widgets/video_widget.dart';

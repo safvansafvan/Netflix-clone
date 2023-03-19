@@ -3,7 +3,11 @@ import 'package:netflix_npp/core/colors/colors.dart';
 
 class CustomButtonWidget extends StatelessWidget {
   const CustomButtonWidget({
-    super.key, required this.icon, required this.title,  this.iconssize=30,  this.textsize=18,
+    super.key,
+    required this.icon,
+    required this.title,
+    this.iconssize = 30,
+    this.textsize = 18,
   });
   final IconData icon;
   final String title;
@@ -13,14 +17,14 @@ class CustomButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-         Icon(
-         icon,
-          size:iconssize,
+        Icon(
+          icon,
+          size: iconssize,
           color: cwhite,
         ),
-         Text(
+        Text(
           title,
-          style: TextStyle(fontSize:textsize, color: cwhite),
+          style: TextStyle(fontSize: textsize, color: cwhite),
         ),
       ],
     );

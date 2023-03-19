@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:netflix_npp/core/colors/colors.dart';
 import 'package:netflix_npp/core/contants.dart';
@@ -15,17 +14,14 @@ class VideoWidget extends StatelessWidget {
         Container(
           height: 200,
           width: double.infinity,
-          decoration:  BoxDecoration(
-            image:const DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(
-                'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/mqsPyyeDCBAghXyjbw4TfEYwljw.jpg',
-              
+          decoration: BoxDecoration(
+              image: const DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                  'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/mqsPyyeDCBAghXyjbw4TfEYwljw.jpg',
+                ),
               ),
-              
-            ),
-            borderRadius: radius10
-          ),
+              borderRadius: radius10),
         ),
         Positioned(
           bottom: 10,
@@ -33,7 +29,8 @@ class VideoWidget extends StatelessWidget {
           child: IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.volume_mute,color: cwhite,
+              Icons.volume_mute,
+              color: cwhite,
             ),
           ),
         ),

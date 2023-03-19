@@ -39,7 +39,6 @@ class Sectiontwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     final Size size = MediaQuery.of(context).size;
 
     return Column(
@@ -73,13 +72,13 @@ class Sectiontwo extends StatelessWidget {
                         ),
                         Downloadimagewidget(
                             imagelist:
-                                '$imageappentUrl${state.downloads![2].posterpath}',
+                                '$imageappentUrl${state.downloads[2].posterpath}',
                             angle: 12,
                             size: Size(size.width * 0.35, size.width * 0.55),
                             margin: const EdgeInsets.only(left: 100, top: 15)),
                         Downloadimagewidget(
                             imagelist:
-                                '$imageappentUrl${state.downloads![1].posterpath}',
+                                '$imageappentUrl${state.downloads[1].posterpath}',
                             angle: -12,
                             size: Size(size.width * 0.35, size.width * 0.55),
                             margin: const EdgeInsets.only(right: 100, top: 15)),
@@ -87,7 +86,7 @@ class Sectiontwo extends StatelessWidget {
                             size: Size(size.width * 0.45, size.width * 0.62),
                             radius: 10,
                             imagelist:
-                                '$imageappentUrl${state.downloads![0].posterpath}',
+                                '$imageappentUrl${state.downloads[0].posterpath}',
                             margin: const EdgeInsets.only(bottom: 10, top: 20))
                       ],
                     ),

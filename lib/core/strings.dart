@@ -1,1 +1,1 @@
-const cbaseUrl="https://api.themoviedb.org/3";
+const cbaseUrl = "https://api.themoviedb.org/3";

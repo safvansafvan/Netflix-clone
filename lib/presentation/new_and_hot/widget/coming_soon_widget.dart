@@ -4,7 +4,7 @@ import 'package:netflix_npp/core/contants.dart';
 import 'package:netflix_npp/presentation/home/widget/custom_btton_widget.dart';
 import 'package:netflix_npp/presentation/widgets/video_widget.dart';
 
-class ComingSoonWidget extends StatelessWidget{
+class ComingSoonWidget extends StatelessWidget {
   const ComingSoonWidget({
     super.key,
   });
@@ -43,7 +43,7 @@ class ComingSoonWidget extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-            const  VideoWidget(),
+              const VideoWidget(),
               cHeight20,
               Row(
                 children: [

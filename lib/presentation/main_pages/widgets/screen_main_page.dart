@@ -12,17 +12,16 @@ class ScreenMainPage extends StatelessWidget {
   ScreenMainPage({super.key});
 
   final pages = [
-   const ScreenHome(),
-   const NewAndHotScreen(),
-   const FastLaugScreen(),
-   const SearchScreen(),
+    const ScreenHome(),
+    const NewAndHotScreen(),
+    const FastLaugScreen(),
+    const SearchScreen(),
     DownloadScreen()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: SafeArea(
         child: ValueListenableBuilder(
           valueListenable: indexchagenotifier,
@@ -31,7 +30,7 @@ class ScreenMainPage extends StatelessWidget {
           },
         ),
       ),
-      bottomNavigationBar:const BottomNavWidget(),
+      bottomNavigationBar: const BottomNavWidget(),
     );
   }
 }
