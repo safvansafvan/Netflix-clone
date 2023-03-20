@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:netflix_npp/application/bloc/search_bloc.dart';
+
 import 'package:netflix_npp/core/colors/colors.dart';
 import 'package:netflix_npp/presentation/search/title.dart';
+import '../../application/search/search_bloc.dart';
 import '../../core/contants.dart';
 
 

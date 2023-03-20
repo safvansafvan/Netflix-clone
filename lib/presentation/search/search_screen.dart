@@ -6,7 +6,9 @@ import 'package:netflix_npp/domain/core/debounce/debonce.dart';
 import 'package:netflix_npp/presentation/search/search_idle.dart';
 import 'package:netflix_npp/presentation/search/search_result.dart';
 
-import '../../application/bloc/search_bloc.dart';
+import '../../application/search/search_bloc.dart';
+
+
 
 class SearchScreen extends StatelessWidget {
   SearchScreen({super.key});

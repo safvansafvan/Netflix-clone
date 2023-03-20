@@ -6,7 +6,9 @@ import 'package:netflix_npp/core/colors/colors.dart';
 import 'package:netflix_npp/domain/core/di/injectable.dart';
 import 'package:netflix_npp/presentation/main_pages/widgets/screen_main_page.dart';
 
-import 'application/bloc/search_bloc.dart';
+import 'application/search/search_bloc.dart';
+
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
