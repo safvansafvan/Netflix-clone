@@ -19,7 +19,7 @@ class SearchRepository implements ISearchRepo {
       );
       if (respons.statusCode == 200 || respons.statusCode == 201) {
         final result = SearchResp.fromJson(respons.data);
-        return right(result);
+        return Right(result);
       } else {
         return const Left(MainFailures.serverFailures());
       }

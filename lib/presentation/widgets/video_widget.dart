@@ -4,8 +4,10 @@ import 'package:netflix_npp/core/contants.dart';
 
 class VideoWidget extends StatelessWidget {
   const VideoWidget({
-    super.key,
+    super.key, required this.url,
   });
+  
+  final String url;
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +17,10 @@ class VideoWidget extends StatelessWidget {
           height: 200,
           width: double.infinity,
           decoration: BoxDecoration(
-              image: const DecorationImage(
+              image:  DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(
-                  'https://www.themoviedb.org/t/p/w533_and_h300_bestv2/mqsPyyeDCBAghXyjbw4TfEYwljw.jpg',
+                  url
                 ),
               ),
               borderRadius: radius10),

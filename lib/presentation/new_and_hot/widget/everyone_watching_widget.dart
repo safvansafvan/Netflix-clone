@@ -7,7 +7,14 @@ import '../../home/widget/custom_btton_widget.dart';
 class EveryoneWatchigWidget extends StatelessWidget {
   const EveryoneWatchigWidget({
     super.key,
+    required this.posterpath,
+    required this.moviename,
+    required this.description,
   });
+
+  final String posterpath;
+  final String moviename;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +34,7 @@ class EveryoneWatchigWidget extends StatelessWidget {
             style: TextStyle(color: Colors.grey),
           ),
           cHeight50,
-          const VideoWidget(),
+         const  VideoWidget(url: cMainimage,),
           cHeight,
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
