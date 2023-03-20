@@ -6,7 +6,7 @@ part 'search_resp.g.dart';
 @JsonSerializable()
 class SearchResp {
  @JsonKey(name: 'results')
-  List<SearchResultData>? results;
+  List<SearchResultData> results;
  
 
 
@@ -31,10 +31,14 @@ class SearchResultData {
   @JsonKey(name: 'poster_path')
   String? posterPath;
 
+   @JsonKey(name: 'backdrop_path')
+  String? backDropPath;
+
   SearchResultData({
     this.id,
     this.originalTitle,
     this.posterPath,
+    this.backDropPath
   });
 
   factory SearchResultData.fromJson(Map<String, dynamic> json) {

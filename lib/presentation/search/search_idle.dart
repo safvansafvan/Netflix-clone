@@ -6,8 +6,6 @@ import 'package:netflix_npp/core/colors/colors.dart';
 import 'package:netflix_npp/presentation/search/title.dart';
 import '../../core/contants.dart';
 
-const imageurl =
-    "https://www.themoviedb.org/t/p/w250_and_h141_face/nVRyd8hlg0ZLxBn9RaI7mUMQLnz.jpg";
 
 class SearchIdlewidget extends StatelessWidget {
   const SearchIdlewidget({super.key});
@@ -42,7 +40,7 @@ class SearchIdlewidget extends StatelessWidget {
                   itemBuilder: (ctx, index) {
                     final movie = state.idleList[index];
                     return TopsearchTopItem(
-                        imageUrl:'$imageappentUrl${ movie.posterpath}' ,
+                        imageUrl:'$imageappentUrl${ movie.backdroppath}' ,
                         title: movie.title ?? 'Title not provided');
                   },
                   separatorBuilder: (ctx, index) => cHeight20,

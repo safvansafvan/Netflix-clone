@@ -3,8 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:netflix_npp/domain/download/core/failures/main_failure.dart';
 import 'package:netflix_npp/domain/download/i_download_repo.dart';
-import 'package:netflix_npp/infrastructor/downloads/download_repository.dart';
-import 'package:netflix_npp/infrastructor/search/search_repository.dart';
 
 import '../../domain/Search/i_search_repo.dart';
 import '../../domain/Search/model/search_resp/search_resp.dart';
@@ -22,16 +20,15 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
   SearchBloc(this._downloadsrepository, this._searchRepository)
       : super(SearchState.initial()) {
     on<Initializes>(
-      
       (event, emit) async {
         if (state.idleList.isNotEmpty) {
           emit(
-           SearchState(
-              searchResultList: [],
-              idleList: state.idleList,
-              isloading: false,
-              isError: false),
-        );
+            SearchState(
+                searchResultList: [],
+                idleList: state.idleList,
+                isloading: false,
+                isError: false),
+          );
           return;
         }
         emit(
@@ -64,8 +61,36 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     );
 
     on<SeachMovie>(
-      (event, emit) {
-        _searchRepository.searchMovies(movieQuery: event.movieQury);
+      (event, emit) async {
+        emit(
+          const SearchState(
+              searchResultList: [],
+              idleList: [],
+              isloading: true,
+              isError: false),
+        );
+        final result =
+            await _searchRepository.searchMovies(movieQuery: event.movieQury);
+        final _state = result.fold(
+          (MainFailures f) {
+            return const SearchState(
+              searchResultList: [],
+              idleList: [],
+              isloading: false,
+              isError: true,
+            );
+          },
+          (SearchResp r) {
+            return SearchState(
+              searchResultList: r.results,
+              idleList: [],
+              isloading: false,
+              isError: false,
+            );
+          },
+        );
+        //show to ui
+        emit(_state);
       },
     );
   }

@@ -18,7 +18,7 @@ import 'package:netflix_npp/infrastructor/search/search_repository.dart'
 
 // ignore_for_file: lines_longer_than_80_chars
   // initializes the registration of main-scope dependencies inside of GetIt
-  _i1.GetIt init(_i1.GetIt get,{
+  _i1.GetIt init(_i1.GetIt get, {
     String? environment,
     _i2.EnvironmentFilter? environmentFilter,
   }) {
@@ -37,3 +37,4 @@ import 'package:netflix_npp/infrastructor/search/search_repository.dart'
         () => _i8.DownloadsBloc(gh<_i3.IDownloadRepo>()));
     return get;
   }
+

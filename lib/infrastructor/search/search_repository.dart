@@ -21,7 +21,7 @@ class SearchRepository implements ISearchRepo {
       } else {
         return const Left(MainFailures.serverFailures());
       }
-    } catch (_) {
+    } catch (e) {
       return const Left(MainFailures.clientFailures());
     }
   }

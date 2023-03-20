@@ -2,17 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_npp/core/contants.dart';
+import 'package:netflix_npp/domain/core/debounce/debonce.dart';
 import 'package:netflix_npp/presentation/search/search_idle.dart';
-
+import 'package:netflix_npp/presentation/search/search_result.dart';
 
 import '../../application/bloc/search_bloc.dart';
 
 class SearchScreen extends StatelessWidget {
-  const SearchScreen({super.key});
+  SearchScreen({super.key});
+
+  final _debouncer = Debouncer(milliseconds: 1 * 1000);
 
   @override
   Widget build(BuildContext context) {
-     BlocProvider.of<SearchBloc>(context).add( Initializes()); 
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<SearchBloc>(context).add(const Initializes());
+    });
     return Scaffold(
         body: SafeArea(
       child: Padding(
@@ -26,16 +31,31 @@ class SearchScreen extends StatelessWidget {
                 CupertinoIcons.search,
                 color: Colors.grey,
               ),
-              suffixIcon: const Icon(
+              suffixIcon: const Icon(  
                 CupertinoIcons.xmark_circle_fill,
                 color: Colors.grey,
               ),
               style: const TextStyle(color: Colors.white),
+              onChanged: (value) {
+                if (value.isEmpty) {
+                  return;
+                }
+                _debouncer.run(() {
+                  BlocProvider.of<SearchBloc>(context)
+                      .add((SeachMovie(movieQury: value)));
+                });
+              },
             ),
             cHeight,
-
-            const Expanded(child: SearchIdlewidget()),
-            // const Expanded(child: SearchResultWidget())
+            Expanded(child: BlocBuilder<SearchBloc, SearchState>(
+              builder: (context, state) {
+                if (state.searchResultList.isEmpty) {
+                  return const SearchIdlewidget();
+                } else {
+                  return const SearchResultWidget();
+                }
+              },
+            )),
           ],
         ),
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix_npp/application/bloc/search_bloc.dart';
 import 'package:netflix_npp/core/contants.dart';
-import 'package:netflix_npp/presentation/search/search_idle.dart';
 import 'package:netflix_npp/presentation/search/title.dart';
 
 class SearchResultWidget extends StatelessWidget {
@@ -14,27 +15,40 @@ class SearchResultWidget extends StatelessWidget {
         const SearchTitleText(title: 'Movie & Tv '),
         cHeight,
         Expanded(
-            child: GridView.count(
+          child: BlocBuilder<SearchBloc, SearchState>(
+            builder: (context, state) {
+              return GridView.count(
                 shrinkWrap: true,
                 crossAxisCount: 3,
                 mainAxisSpacing: 8,
                 crossAxisSpacing: 8,
                 childAspectRatio: 1 / 1.4,
-                children: List.generate(21, (index) => const ManiCard())))
+                children: List.generate(
+                  state.searchResultList.length,
+                  (index) {
+                    final movie = state.searchResultList[index];
+                    return ManiCard(
+                        imageUrls: '$imageappentUrl${movie.posterPath}');
+                  },
+                ),
+              );
+            },
+          ),
+        ),
       ],
     );
   }
 }
 
 class ManiCard extends StatelessWidget {
-  const ManiCard({super.key});
-
+  const ManiCard({super.key, required this.imageUrls});
+  final String imageUrls;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          image:  DecorationImage(
-              fit: BoxFit.cover, image: NetworkImage(imageurl)),
+          image: DecorationImage(
+              fit: BoxFit.cover, image: NetworkImage(imageUrls)),
           borderRadius: BorderRadius.circular(8)),
     );
   }
