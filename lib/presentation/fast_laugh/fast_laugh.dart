@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_npp/presentation/fast_laugh/widget/video_list_item.dart';
 
-import '../../application/fastLaugh/fast_laugh_bloc.dart';
+import '../../application/bloc/fast_laugh_bloc.dart';
 
 class FastLaugScreen extends StatelessWidget {
   const FastLaugScreen({super.key});

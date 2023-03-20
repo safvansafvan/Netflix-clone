@@ -6,18 +6,11 @@ part 'downloads.g.dart';
 
 @freezed
 class Downloads with _$Downloads {
-  const factory Downloads(
-
-      {
-        @JsonKey(name: "poster_path")
-         required String? posterpath,
-
-         @JsonKey(name: "backdrop_path")
-         required String? backdroppath,
-
-         @JsonKey(name: "title")
-          required String? title,
-         }) = _Downloads;
+  const factory Downloads({
+    @JsonKey(name: "poster_path") required String? posterpath,
+    @JsonKey(name: "backdrop_path") required String? backdroppath,
+    @JsonKey(name: "title") required String? title,
+  }) = _Downloads;
 
   factory Downloads.fromJson(Map<String, dynamic> json) =>
       _$DownloadsFromJson(json);

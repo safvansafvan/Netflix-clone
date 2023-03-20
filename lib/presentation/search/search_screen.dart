@@ -8,8 +8,6 @@ import 'package:netflix_npp/presentation/search/search_result.dart';
 
 import '../../application/search/search_bloc.dart';
 
-
-
 class SearchScreen extends StatelessWidget {
   SearchScreen({super.key});
 
@@ -33,7 +31,7 @@ class SearchScreen extends StatelessWidget {
                 CupertinoIcons.search,
                 color: Colors.grey,
               ),
-              suffixIcon: const Icon(  
+              suffixIcon: const Icon(
                 CupertinoIcons.xmark_circle_fill,
                 color: Colors.grey,
               ),

@@ -1,16 +1,15 @@
 import 'package:json_annotation/json_annotation.dart';
 
-
 part 'search_resp.g.dart';
 
 @JsonSerializable()
 class SearchResp {
- @JsonKey(name: 'results')
+  @JsonKey(name: 'results')
   List<SearchResultData> results;
- 
 
-
-  SearchResp({ this.results= const [], });
+  SearchResp({
+    this.results = const [],
+  });
 
   factory SearchResp.fromJson(Map<String, dynamic> json) {
     return _$SearchRespFromJson(json);
@@ -18,7 +17,6 @@ class SearchResp {
 
   Map<String, dynamic> toJson() => _$SearchRespToJson(this);
 }
-
 
 @JsonSerializable()
 class SearchResultData {
@@ -31,15 +29,11 @@ class SearchResultData {
   @JsonKey(name: 'poster_path')
   String? posterPath;
 
-   @JsonKey(name: 'backdrop_path')
+  @JsonKey(name: 'backdrop_path')
   String? backDropPath;
 
-  SearchResultData({
-    this.id,
-    this.originalTitle,
-    this.posterPath,
-    this.backDropPath
-  });
+  SearchResultData(
+      {this.id, this.originalTitle, this.posterPath, this.backDropPath});
 
   factory SearchResultData.fromJson(Map<String, dynamic> json) {
     return _$SearchResultDataFromJson(json);
@@ -47,4 +41,3 @@ class SearchResultData {
 
   Map<String, dynamic> toJson() => _$SearchResultDataToJson(this);
 }
-

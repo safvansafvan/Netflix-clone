@@ -7,10 +7,8 @@ import 'package:netflix_npp/core/colors/colors.dart';
 import 'package:netflix_npp/domain/core/di/injectable.dart';
 import 'package:netflix_npp/presentation/main_pages/widgets/screen_main_page.dart';
 
-import 'application/fastLaugh/fast_laugh_bloc.dart';
+import 'application/bloc/fast_laugh_bloc.dart';
 import 'application/search/search_bloc.dart';
-
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,7 +27,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => getIt<DownloadsBloc>()),
         BlocProvider(create: (context) => getIt<SearchBloc>()),
         BlocProvider(create: (context) => getIt<FastLaughBloc>())
-        ],
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,

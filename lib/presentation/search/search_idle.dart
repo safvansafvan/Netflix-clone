@@ -7,7 +7,6 @@ import 'package:netflix_npp/presentation/search/title.dart';
 import '../../application/search/search_bloc.dart';
 import '../../core/contants.dart';
 
-
 class SearchIdlewidget extends StatelessWidget {
   const SearchIdlewidget({super.key});
 
@@ -41,7 +40,7 @@ class SearchIdlewidget extends StatelessWidget {
                   itemBuilder: (ctx, index) {
                     final movie = state.idleList[index];
                     return TopsearchTopItem(
-                        imageUrl:'$imageappentUrl${ movie.backdroppath}' ,
+                        imageUrl: '$imageappentUrl${movie.backdroppath}',
                         title: movie.title ?? 'Title not provided');
                   },
                   separatorBuilder: (ctx, index) => cHeight20,

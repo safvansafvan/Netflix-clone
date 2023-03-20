@@ -6,7 +6,7 @@ import 'package:netflix_npp/core/contants.dart';
 import 'package:netflix_npp/domain/download/models/downloads.dart';
 import 'package:video_player/video_player.dart';
 
-import '../../../application/fastLaugh/fast_laugh_bloc.dart';
+import '../../../application/bloc/fast_laugh_bloc.dart';
 import 'package:share_plus/share_plus.dart';
 
 class VideoListInheritedWidget extends InheritedWidget {
