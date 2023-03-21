@@ -10,8 +10,9 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'package:netflix_npp/application/download/dowload_bloc.dart' as _i10;
 import 'package:netflix_npp/application/fast_laugh/fast_laugh_bloc.dart'
     as _i11;
+import 'package:netflix_npp/application/home/home_bloc.dart' as _i12;
 import 'package:netflix_npp/application/hot_and_new/hot_and_new_bloc.dart'
-    as _i12;
+    as _i13;
 import 'package:netflix_npp/application/search/search_bloc.dart' as _i9;
 import 'package:netflix_npp/domain/download/i_download_repo.dart' as _i3;
 import 'package:netflix_npp/domain/new_and_hot_resp/hot_and_new_repo.dart'
@@ -46,8 +47,9 @@ import 'package:netflix_npp/infrastructor/search/search_repository.dart'
         () => _i10.DownloadsBloc(gh<_i3.IDownloadRepo>()));
     gh.factory<_i11.FastLaughBloc>(
         () => _i11.FastLaughBloc(gh<_i3.IDownloadRepo>()));
-    gh.factory<_i12.HotAndNewBloc>(
-        () => _i12.HotAndNewBloc(gh<_i5.IHotAndNewRepo>()));
+    gh.factory<_i12.HomeBloc>(() => _i12.HomeBloc(gh<_i5.IHotAndNewRepo>()));
+    gh.factory<_i13.HotAndNewBloc>(
+        () => _i13.HotAndNewBloc(gh<_i5.IHotAndNewRepo>()));
     return get;
   }
 

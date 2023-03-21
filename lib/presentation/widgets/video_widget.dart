@@ -1,29 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_npp/core/colors/colors.dart';
-import 'package:netflix_npp/core/contants.dart';
-
 class VideoWidget extends StatelessWidget {
   const VideoWidget({
-    super.key, required this.url,
+    super.key,
+    required this.url,
   });
-  
+
   final String url;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
+        SizedBox(
           height: 200,
           width: double.infinity,
-          decoration: BoxDecoration(
-              image:  DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(
-                  url
-                ),
-              ),
-              borderRadius: radius10),
+          child: Image.network(
+            
+            url,
+            fit: BoxFit.cover,
+            loadingBuilder: (BuildContext _ ,Widget child,ImageChunkEvent?progress){
+              if (progress==null) {
+                return child;
+              }else{
+               return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+            },
+            errorBuilder: (BuildContext _ ,Object a,StackTrace? trace){
+              return const Center( child:  Icon(Icons.wifi,color: cwhite,),);
+            }
+          ),
         ),
         Positioned(
           bottom: 10,

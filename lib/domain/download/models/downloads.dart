@@ -1,14 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:json_annotation/json_annotation.dart';
-
 part 'downloads.freezed.dart';
 part 'downloads.g.dart';
 
 @freezed
 class Downloads with _$Downloads {
   const factory Downloads({
+    // ignore: invalid_annotation_target
     @JsonKey(name: "poster_path") required String? posterpath,
+    // ignore: invalid_annotation_target
     @JsonKey(name: "backdrop_path") required String? backdroppath,
+    // ignore: invalid_annotation_target
     @JsonKey(name: "title") required String? title,
   }) = _Downloads;
 

@@ -16,7 +16,7 @@ class Downloadrepository implements IDownloadRepo {
       if (respons.statusCode == 200 || respons.statusCode == 201) {
         final downloadlist = (respons.data['results'] as List).map((e) {
           return Downloads.fromJson(e);
-        }).toList();
+          }).toList();
 
         return right(downloadlist);
       } else {

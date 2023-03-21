@@ -24,17 +24,17 @@ class EveryoneWatchigWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           cHeight,
-          const Text(
-            'Friends',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+           Text(
+            moviename,
+            style:const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           cHeight,
-          const Text(
-            'This hit sictom follows the mary misadventures of six 20 something pals as they navigate at pitfalls of work, life and love in 1990s Manhattan',
-            style: TextStyle(color: Colors.grey),
+           Text(
+            description,
+            style:const TextStyle(color: Colors.grey),
           ),
           cHeight50,
-         const  VideoWidget(url: cMainimage,),
+           VideoWidget(url: posterpath),
           cHeight,
           Row(
             mainAxisAlignment: MainAxisAlignment.end,

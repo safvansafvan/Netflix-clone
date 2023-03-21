@@ -4,7 +4,9 @@ import 'package:netflix_npp/core/contants.dart';
 class MainCard extends StatelessWidget {
   const MainCard({
     super.key,
+    required this.imageUrl,
   });
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +16,12 @@ class MainCard extends StatelessWidget {
         width: 150,
         height: 250,
         decoration: BoxDecoration(
-            borderRadius: radius10,
-            image: const DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(
-                    'https://www.themoviedb.org/t/p/w220_and_h330_face/xf9wuDcqlUPWABZNeDKPbZUjWx0.jpg'))),
+          borderRadius: radius10,
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: NetworkImage(imageUrl),
+          ),
+        ),
       ),
     );
   }

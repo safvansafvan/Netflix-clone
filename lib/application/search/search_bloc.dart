@@ -60,6 +60,9 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       },
     );
 
+
+//search
+
     on<SeachMovie>(
       (event, emit) async {
         emit(

@@ -4,7 +4,6 @@ import 'package:injectable/injectable.dart';
 import 'package:netflix_npp/domain/Search/i_search_repo.dart';
 import 'package:netflix_npp/domain/download/core/failures/main_failure.dart';
 import 'package:netflix_npp/domain/Search/model/search_resp/search_resp.dart';
-
 import '../../domain/download/core/api_end_point.dart';
 
 @LazySingleton(as: ISearchRepo)
