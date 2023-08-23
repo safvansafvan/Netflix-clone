@@ -22,13 +22,19 @@ class _ScreenSplashState extends State<ScreenSplash> {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      BlocProvider.of<HomeBloc>(context).add(const HomeEvent.getHomeScreenData());
+      BlocProvider.of<HomeBloc>(context)
+          .add(const HomeEvent.getHomeScreenData());
       BlocProvider.of<DownloadsBloc>(context)
           .add(const DownloadsEvent.getDownloadsImage());
     });
 
     return const Scaffold(
-      body: Center(),
+      body: Center(
+        child: Text(
+          "Netflix",
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+      ),
     );
   }
 

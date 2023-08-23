@@ -56,7 +56,7 @@ class ScreenHome extends StatelessWidget {
                   trendingNow.shuffle();
 
                   //top 10
-                  final topTen = state.trendingTvList.map((mov) {
+                  state.trendingTvList.map((mov) {
                     return '$imageappentUrl${mov.posterPath}';
                   }).toList();
 
@@ -85,7 +85,7 @@ class ScreenHome extends StatelessWidget {
                         posterList: trendingNow.sublist(0, 10),
                       ),
                       cHeight,
-                      NumberTileCard(),
+                      const NumberTileCard(),
                       cHeight,
                       MainTitleCard(
                         title: 'Tense Dramas ',
@@ -122,11 +122,6 @@ class ScreenHome extends StatelessWidget {
                                       color: Colors.white,
                                       size: 30,
                                     )),
-                                Container(
-                                  width: 30,
-                                  height: 30,
-                                  color: Colors.blue,
-                                ),
                                 cWidth
                               ],
                             ),
